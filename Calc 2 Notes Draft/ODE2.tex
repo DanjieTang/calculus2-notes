@@ -1,0 +1,188 @@
+\section{Second Order Differential equation}
+	\subsection{Step 1: Find solution to homogeneous equation}
+	You are given: 
+	$$\displaystyle ay''+by'+c=f(x)$$
+	
+	\noindent Find the complementary equation:
+	\begin{align*}
+	a\lambda^2+b\lambda+c&=0	\\
+	\lambda&=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+	\end{align*}
+	
+	\noindent Three types of solutions:
+	\begin{enumerate}
+	\item Two different real solutions ($\lambda_1, \lambda_2$)
+	\begin{equation}
+	y=C_1e^{\lambda_1x}+C_2e^{\lambda_2x}
+	\end{equation}
+	
+	\item One real solution ($\lambda$)
+	\begin{equation}
+	y=C_1e^{\lambda x}+C_2xe^{\lambda x}
+	\end{equation}
+	
+	\item Two different imagery solutions $\left(\alpha=-\frac{b}{2a}, \beta=\frac{\sqrt{4ac-b^2}}{2a}\right)$
+	\begin{equation}
+	y=e^{\alpha x}\left(C_1\cos{(\beta x)}+C_2\sin{(\beta x)}\right)
+	\end{equation}
+	\end{enumerate}
+	
+	\subsection{Step 2: Find solution to non-homogeneous equation}
+	Skip this step if f(x) equals 0.
+	
+	\begin{enumerate}
+	\item Make an educated guess\footnotemark[4]:
+	\begin{center}
+	\begin{tabular}{|c|c|}
+	\hline
+	f(x)&Educated\ Guess\\
+	\hline\hline
+	$c_1$x+$c_2$ & Ax+B\\
+	\hline
+	$c_1x^2$+$c_2$x+$c_3$&$Ax^2+Bx+C$\\
+	\hline
+	$c_1e^{\lambda x}$&$Ae^{\lambda x}$\\
+	\hline
+	$c_1e^{\alpha x}\cos{\beta x}+c_2e^{\alpha x}\sin{\beta x}$&$Ae^{\alpha x}\cos{\beta x}+Be^{\alpha x}\sin{\beta x}$\\
+	\hline
+	$\left(c_1x^2+c_2x+c_3\right)e^{\lambda x}$&$\left(Ax^2+Bx+C\right)e^{\lambda x}$\\
+	\hline
+	$(c_1x+c_2)\cos{(\lambda x)}$&$(Ax+B)\cos{(\lambda x)}+(Cx+D)\sin{(\lambda x)}$\\
+	\hline
+	$(c_1x+c_2)\sin{(\lambda x)}$&$(Ax+B)\cos{(\lambda x)}+(Cx+D)\sin{(\lambda x)}$\\
+	\hline
+	$\left(c_1x^2+x_2x+c_3\right)e^{\lambda x}\cos{(\beta x)}$&$(Ax^2+Bx+C)e^{\lambda x}\cos{(\beta x)}+(Dx^2+Ex+F)e^{\lambda x}\sin{(\beta x)}$\\
+	\hline
+	$\left(c_1x^2+x_2x+c_3\right)e^{\lambda x}\sin{(\beta x)}$&$(Ax^2+Bx+C)e^{\lambda x}\cos{(\beta x)}+(Dx^2+Ex+F)e^{\lambda x}\sin{(\beta x)}$\\
+	\hline
+	\end{tabular}
+	\end{center}
+	
+	\footnotetext[4]{Must be same $\lambda x$ in f(x) and guess}
+	
+	Simplified version:
+	\begin{center}
+	\begin{tabular}{|c|c|}
+	\hline
+	f(x)&Educated Guess\\
+	\hline
+	\hline
+	Ploynomial&Same order polynomial\\
+	\hline
+	$e^{\lambda x}$&$Ae^{\lambda x}$\\
+	\hline
+	$\sin{(\lambda x)}\ and/or\ \cos{(\lambda x)}$&$A\sin{(\lambda x)}+B\cos{(\lambda x)}$\\
+	\hline
+	\end{tabular}
+	\end{center}
+	
+	\item Let g(x) represent your educated guess, find g'(x) and g''(x):
+	
+	\item Sub your guess back into the ODE
+	For example:
+	$$y''+2y'+3y=10e^{2x}$$
+	In this case, g(x)=$Ae^{2x}$, g'(x)=$2Ae^{2x}$, g''(x)=$4Ae^{2x}$:
+	\begin{align*}
+	g''(x)+2g'(x)+3g(x)&=10e^{2x}\\
+	4Ae^{2x}+2*2Ae^{2x}+3*Ae^{2x}&=10e^{2x}
+	\end{align*}
+	\item Find undetermined coefficient\\
+	Simple example:
+	\begin{align*}
+	4A+4A+3*A&=10\\
+	A&=\frac{10}{11}
+	\end{align*}
+	
+	\item Find the particular solution:
+	Sub the coefficients into your guess
+	$$g(x)=\frac{10}{11}e^{2x}$$
+	
+	\item The general solution is combination of homogeneous solution and a particular solution:
+	\begin{equation}
+	y_{general}=y_{homogeneous}+y_{particular}
+	\end{equation}
+	\end{enumerate}
+	
+	\newpage
+	
+	\begin{example}{}{}
+	Find:
+	$$2y''+13y'+6y=-13te^{4t}$$
+	
+	\begin{enumerate}
+	\item Find the solution for homo-generous equation
+	
+	\indent Complementary equation
+	\begin{align*}
+	2\lambda^2+13\lambda +6=0\\
+	(2\lambda+1)(\lambda+6)=0\\
+	\lambda_1=-\frac{1}{2}\ \ \ \lambda_2=-6
+	\end{align*}
+	
+	Solution for homo-generous equation:
+	$$y=C_1e^{-\frac{1}{2}t}+C_2e^{-6t}$$
+	
+	\item Make an educated guess
+	
+	Let $g(x)=$
+	$$(At+B)e^{4t}$$
+	so that $g'(x)=$
+	$$(4At+4B)e^{4t}+Ae^{4t}$$
+	$$4Ate^{4t}+4Be^{4t}+Ae^{4t}$$
+	and $g''(x)=$
+	$$(16At+16B)e^{4t}+4Ae^{4t}+4Ae^{4t}$$
+	$$16Ate^{4t}+16Be^{4t}+8Ae^{4t}$$
+	
+	Sub everything back into the equation:
+	\begin{align*}
+	16Ate^{4t}+16Be^{4t}+8Ae^{4t}+6(4Ate^{4t}+4Be^{4t}+Ae^{4t})+5((At+B)e^{4t})&=-13te^{4t}\\
+	16Ate^{4t}+16Be^{4t}+8Ae^{4t}+24Ate^{4t}+24Be^{4t}+6Ae^{4t}+5Ate^{4t}+5Be^{4t}&=-13te^{4t}\\
+	45Ate^{4t}+45Be^{4t}+14Ae^{4t}&=-13te^{4t}\\
+	45At+45B+14A&=-13t\\
+	\end{align*}
+	
+	Using some simple linear algebra:
+	\begin{align*}
+	&=\left[\begin{array}{cc|c}
+	45 & 0 & -13\\
+	14&45&0
+	\end{array}\right]\\
+	&=\left[\begin{array}{cc|c}
+	1&0&-\frac{13}{45}\\
+	14&45&0
+	\end{array}\right]\\
+	&=\left[\begin{array}{cc|c}
+	1&0&-\frac{13}{45}\\
+	0&45&\frac{182}{45}\\
+	\end{array}\right]\\
+	&=\left[\begin{array}{cc|c}
+	1&0&-\frac{13}{45}\\
+	0&1&\frac{182}{2025}\\
+	\end{array}\right]
+	\end{align*}
+	
+	$g(x)=$
+	$$-\frac{13}{45}te^{4t}+\frac{182}{2025}e^{4t}$$
+	
+	\item The general solution to the question is:
+	$$y=C_1e^{-\frac{1}{2}t}+C_2e^{-6t}-\frac{13}{45}te^{4t}+\frac{182}{2025}e^{4t}$$
+	\end{enumerate}
+	\end{example}
+	
+	\section{Applications of Second Order Differential Equations}
+	\subsection{Simple Oscillation}
+	\begin{equation}
+	my''+ky=0
+	\end{equation}
+	\subsection{Damped Oscillation}
+	\begin{equation}
+	my''+by'+ky=0
+	\end{equation}
+	\subsection{Forced Oscillation}
+	\begin{equation}
+	my''+by'+ky=F(t)
+	\end{equation}
+	\subsection{Circuit}
+	\begin{equation}
+	Lq''+Rq'+\frac{1}{C}q=V(t)
+	\end{equation}

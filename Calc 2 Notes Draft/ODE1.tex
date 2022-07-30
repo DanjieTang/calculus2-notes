@@ -1,0 +1,66 @@
+\section{First Order ODE}
+	\subsection{Separable ODE}
+	Checklist:
+	\begin{enumerate}
+	\item Seperate it into $f(y)g(x)$
+	\begin{equation}
+	\frac{dy}{dx}=f(y)*g(x)
+	\end{equation}
+	
+	\item Move $f(y)$ to other side:
+	\begin{equation}
+	\frac{1}{f(y)}\ dy=g(x)\ dx
+	\end{equation}
+	
+	\item Integrate both sides:
+	\begin{equation}
+	\int\frac{1}{f(y)}\ dy=\int g(x)\ dx
+	\end{equation}
+	
+	\item Isolate for y if possible
+	\end{enumerate}
+	
+	\begin{simple}{}{}
+	Find:
+	$$\frac{dy}{dx}=\frac{x}{e^y},\hspace{0.5cm}y(2)=3$$
+	\indent Solution:
+	\begin{align*}
+	e^y\ dy&=x\ dx\\
+	\int e^y\ dy&=\int x\ dx\\
+	e^y+C_1&=\frac{1}{2}x^2+C_2\\
+	e^y&=\frac{1}{2}x^2+C\\
+	y&=C\ln{\left(\frac{1}{2}x^2\right)}
+	\end{align*}
+	
+	Using initial condition:
+	\begin{align*}
+	3=C\ln{\left(\frac{1}{2}*2^2\right)}\\
+	3=C\ln{(2)}\\
+	C=\frac{3}{\ln(2)}
+	\end{align*}
+	\end{simple}
+	
+	\subsection{Linear ODE}
+	\begin{enumerate}
+	\item Put the given equation into standard form:
+	\begin{equation}
+	\frac{dy}{dx}+f(x)y=g(x)
+	\end{equation}
+	\item Find the integrating factor
+	\begin{equation}
+	I(x)=e^{\int f(x)\ dx}
+	\end{equation}
+	\item Multiply both sides by integrating factor
+	\begin{tiny}
+	(Math magic)
+	\end{tiny}
+	\begin{align*}
+	I(x)*\left(\frac{dy}{dx}+f(x)*y\right)&=I(x)*g(x)\\
+	\frac{dy}{dx}\left( I(x)*y\right) &=I(x)*g(x)
+	\end{align*}
+	\item Integrate both sides
+	\begin{equation}
+	I(x)*y=\int I(x)*g(x)
+	\end{equation}
+	\item Find C
+	\end{enumerate}

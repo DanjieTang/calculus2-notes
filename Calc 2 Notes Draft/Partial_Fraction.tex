@@ -1,0 +1,64 @@
+\section{Partial Fraction}
+	Checklist:
+	\begin{enumerate}
+	\item Check for long division
+	\item Factor
+	\item Write out all variables\ldots
+	\item Cross multiply
+	\item Isolate for x, $x^2\ldots$
+	\item Linear algebra
+	\item Sub everything back in
+	\end{enumerate}
+	
+	\begin{simple}{}{}
+	Find:
+	$$\int\frac{x+5}{x^2+3x+2}$$
+	
+	\begin{enumerate}
+	\item Check for long division:
+	\begin{center}
+	We can see that no long division is required.
+	\end{center}
+	
+	\item Factor:
+	$$x^2+3x+2=(x+1)(x+2)$$
+	
+	\item Write out all variables
+	$$\frac{x+5}{(x+1)(x+2)}=\frac{A}{x+1}+\frac{B}{x+2}$$
+	\item Cross multiply
+	$$x+5=A(x+2)+B(x+1)$$
+	\item Isolate for x, $x^2\dots$
+	\begin{align*}
+	x+5&=Ax+2A+Bx+B\\
+	x+5&=x(A+B)+2A+B
+	\end{align*}
+	\item Linear Algebra
+	\begin{align*}
+	&=\left[\begin{array}{cc|c}
+	1 & 1 & 1\\
+	2 & 1 & -5
+	\end{array}\right]\\
+	&=\left[\begin{array}{cc|c}
+	1&1&1\\
+	0&-1&-7
+	\end{array}\right]\\
+	&=\left[\begin{array}{cc|c}
+	1&1&1\\
+	0&1&7
+	\end{array}\right]\\
+	&=\left[\begin{array}{cc|c}
+	1&0&-6\\
+	0&1&7
+	\end{array}\right]
+	\end{align*}
+	\noindent A=-6 B=7
+	
+	\item Sub everything back in
+	\begin{align*}
+	\int\frac{x+5}{(x+1)(x+2)}&=\int\frac{A}{x+1}+\int\frac{B}{x+2}\\
+	&=\int\frac{-6}{x+1}+\int\frac{7}{x+2}\\
+	&=-6\int\frac{1}{x+1}+7\int\frac{1}{x+2}\\
+	&=-6\ln{(x+1)}+7\ln{(x+2)}+C
+	\end{align*}
+	\end{enumerate}
+	\end{simple}

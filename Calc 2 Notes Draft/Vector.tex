@@ -1,0 +1,140 @@
+\section{Vector}
+I trust you took linear algebra before.
+
+\begin{theorem}{}{}
+Given a vector equation:
+    \begin{equation}
+        r(t)=f(t)\Vec{i}+g(t)\Vec{j}+h(t)\Vec{k}
+    \end{equation}
+Derivative of the equation is:
+    \begin{equation}
+        r'(t)=f'(t)\Vec{i}+g'(t)\Vec{j}+h'(t)\Vec{k}
+    \end{equation}
+Integral of the equation is:
+    \begin{equation}
+        \int r(t)=\int f(t)\Vec{i}+\int g(t)\Vec{j}+\int h(t)\Vec{k}+C
+    \end{equation}
+    C is any vector $<$a, b, c$>$ where a, b and c are all constants.
+\end{theorem}
+
+\subsection{Magnitude of Vector}
+\begin{equation}
+    ||r'(t)||=\sqrt{(f'(t))^2+(g'(t))^2+(h'(t))^2}
+\end{equation}
+
+\subsection{Unit vector}
+We are interested in unit tangent vector:
+\begin{equation}
+    T(t)=\frac{r'(t)}{||r'(t)||}
+\end{equation}
+
+\subsection{Principal/Unit Normal Vector}
+\begin{equation}
+    N(t)=\frac{T'(t)}{||T'(t)||}
+\end{equation}
+
+\subsection{Binormal Vector}
+\begin{equation}
+    B(t)=T(t)\times N(t)
+\end{equation}
+
+\subsection{Arc Length}
+\begin{equation}
+    L=\int^b_a\sqrt{(f'(t))^2+(g'(t))^2+(h'(t))^2}dt=\int^b_a||r'(t)||dt
+\end{equation}
+
+
+\subsection{Arc Length Function}
+Arc length function is basically expressing the function with distance traveled as the domain.
+\newpage
+\noindent Checklist:
+\begin{enumerate}
+    \item Find the distance traveled with respect to t
+    \item Isolate for t
+    \item Sub the equation back into r(t)
+\end{enumerate}
+
+\begin{simple}{}{}
+Given 
+$$r(t)=<2\sin{(t)}, 2\cos{(t)}>$$
+find arc length function.
+
+Solution:\\
+Step 1:
+\begin{align*}
+    S&=\int^t_0||r'(\theta)||d\theta\\
+    &=\int^t_0\sqrt{4\sin^2{(\theta)}+4\cos^2{(\theta)}} d\theta\\
+    &=\int^t_0\sqrt{4}d\theta\\
+    &=\int^t_02d\theta\\
+    &=2t
+\end{align*}
+
+Step 2:
+\begin{align*}
+    S=&2t\\
+    \frac{S}{2}=t
+\end{align*}
+
+Step 3:
+$$r(t)=\left<2\sin{\left(\frac{S}{2}\right)}, 2\cos{\left(\frac{S}{2}\right)}\right>$$
+\end{simple}
+\noindent If starting at another point:\\
+Checklist:
+\begin{enumerate}
+    \item Find $t_0$ at that point
+    \item $\int^t_{t_0}||r'(t)||dt$
+\end{enumerate}
+
+\begin{simple}{}{}
+Given the equation:
+$$r(t)=<t^2+3, 2\cos{\pi t}>$$
+
+find $t_0$ when $r(t)=<12, -2>$
+
+Solution:
+$t_0$=3
+\end{simple}
+
+\subsection{Curvature}
+$$\kappa=\frac{||T'(t)||}{||r'(t)||}=\frac{||r'(t)\times r''(t)||}{||r'(t)||^3}$$
+
+\subsection{Acceleration}
+\begin{theorem}{}{}
+Acceleration contains two components:
+\begin{multicols}{2}
+\noindent
+$$a_T\text{ is tangential acceleration}$$
+$$a_n\text{ is normal/perpendicular acceleration}$$
+\end{multicols}
+\begin{equation}
+    \Vec{a}(t)=a_T\Vec{T}+a_n\Vec{N}
+\end{equation}
+Where $\Vec{T}$ is unit tangent vector and $\Vec{N}$ is unit normal vector.\\
+Magnitude of tangential component is:
+\begin{equation}
+    a_T=\frac{r'(t)\cdot r''(t)}{||r'(t)||}
+\end{equation}
+Magnitude of normal component is:
+\begin{equation}
+    a_n=\frac{||r'(t)\times r''(t)||}{||r'(t)||}
+\end{equation}
+\end{theorem}
+
+\begin{theorem}{}{}
+If a cylinder can be expressed with equation $x^2+y^2=a$, think of it as a cylinder with a radius of $\frac{a}{2}$ centered at origin.
+\end{theorem}
+
+\begin{example}{}{}
+Find the intersection of cylinder: $$x^2+y^2=a$$ and plane $$x+y+z=b$$
+Solution:
+
+We can create a variable t such that x and y value can be express in the form of $\frac{a}{2}\cos{(t)}$ and $\frac{a}{2}\sin{(t)}$ respectively.Taking these values back into plane equation:
+\begin{align*}
+    x+y+z&=b\\
+    \frac{a}{2}\cos{(t)}+\frac{a}{2}\sin{(t)}+z&=b\\
+    z&=b+\frac{a}{2}\cos{(t)}+\frac{a}{2}\sin{(t)}
+\end{align*}
+
+Therefore the intersection can be described by vector equation:
+$$r(t)=\left<\frac{a}{2}\cos{(t)}, \frac{a}{2}\sin{(t)}, b+\frac{a}{2}\cos{(t)}+\frac{a}{2}\sin{(t)}\right>$$
+\end{example}

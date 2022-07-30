@@ -1,0 +1,115 @@
+\section{Integration By Part}
+	\begin{equation}
+	\int f(x)g'(x) dx = f(x)g(x)-\int f'(x)g(x)dx
+	\end{equation}
+	
+	\begin{simple}{}{}
+	Let try to integrate:
+	$$\int(x+1)\cos{(x)}$$
+	Let:
+	
+	\begin{multicols}{2}
+	\noindent
+	\begin{equation*}
+	f(x)=x+1
+	\end{equation*}
+	\begin{equation*}
+	g'(x)=cos(x)
+	\end{equation*}
+	\end{multicols}
+	
+	\noindent So that:
+	
+	\begin{multicols}{2}
+	\noindent
+	\begin{equation*}
+	f'(x)=1
+	\end{equation*}
+	\begin{equation*}
+	g(x)=\sin{(x)}
+	\end{equation*}
+	\end{multicols}
+	
+	\begin{align*}
+	\int (x+1)\cos{(x)} &= (x+1)*\sin{(x)} -\int 1*\sin{(x)}\ dx\\
+	&=(x+1)*\sin{(x)} - \int \sin{(x)}\ dx\\
+	&=(x+1)*\sin{(x)} + \cos{(x)}\\
+	\end{align*}
+	\end{simple}
+	
+	\begin{simple}[colback=aliceblue, colframe=airforceblue]{}{}
+	A weird case that you'll probably learn:
+	\begin{align*}
+	\int e^x\sin{(x)}\ dx
+	\end{align*}
+	Let:
+	\begin{multicols}{2}
+	\noindent
+	\begin{equation*}
+	f(x)=e^x
+	\end{equation*}
+	\begin{equation*}
+	g'(x)=\sin (x)
+	\end{equation*}
+	\end{multicols}
+	\noindent So that:
+	\begin{multicols}{2}
+	\noindent
+	\begin{equation*}
+	f'(x)=e^x
+	\end{equation*}
+	\begin{equation*}
+	g(x)=-\cos (x)
+	\end{equation*}
+	\end{multicols}
+	
+	Sub everything into the formula:
+	\begin{align*}
+	\int e^x\sin{(x)}\ dx&=e^x*-cos (x)-\int e^x*-\cos (x)\ dx\\
+	\int e^x\sin{(x)}\ dx&=-e^x * \cos (x)+\int e^x*cos (x)\ dx\\
+	\end{align*}
+	
+	\newpage	
+	
+	Let:
+	\begin{multicols}{2}
+	\noindent
+	\begin{equation*}
+	f(x)=e^x
+	\end{equation*}
+	\begin{equation*}
+	g'(x)=\cos (x)
+	\end{equation*}
+	\end{multicols}
+	\noindent So that:
+	\begin{multicols}{2}
+	\noindent
+	\begin{equation*}
+	f'(x)=e^x
+	\end{equation*}
+	\begin{equation*}
+	g(x)=\sin (x)
+	\end{equation*}
+	\end{multicols}
+	
+	\begin{align*}
+	\int e^x\sin{(x)}\ dx&=-e^x*\cos{(x)}+\int e^x*cos(x)\ dx\\
+	\int e^x\sin{(x)}\ dx&=-e^x*\cos{(x)}+\left[e^x*\sin{(x)}-\int e^x*\sin{(x)}\ dx\right]\\
+	\int e^x\sin{(x)}\ dx&=-e^x*\cos{(x)}+e^x*\sin{(x)}-\int e^x*\sin{(x)}\ dx\\
+	2\int e^x\sin{(x)}\ dx&=-e^x*\cos{(x)}+e^x*\sin{(x)}\\
+	\int e^x\sin{(x)}\ dx&=-\frac{1}{2}e^x*\cos{(x)}+\frac{1}{2}e^x*\sin{(x)}
+	\end{align*}
+	\end{simple}
+	
+	\begin{theorem}{LIATE}{}
+	Here's a quick checklist when picking f(x)
+	\begin{enumerate}
+	    \item L-Logarithmic 
+	    \item I-Inverse Trigonometric
+	    \item A-Algebra
+	    \item T-Trigonometric
+	    \item E-Exponential
+	\end{enumerate}
+	L is your most preferred f(x) and E is the worst choice.\footnotemark
+	\end{theorem}
+	\footnotetext{From my experience, you almost never have to pick L or I. T and E are exchangeable, pick the one that makes solving the question easier}

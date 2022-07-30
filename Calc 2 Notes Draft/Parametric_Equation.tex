@@ -1,0 +1,86 @@
+\section{Parametric Equation}
+
+\subsection{Eliminate the parameter}
+Checklist:
+\begin{enumerate}
+    \item Express x or y in terms of t
+    \item Sub t value 
+\end{enumerate}
+
+\begin{simple}{}{}
+Eliminate the parameter
+$$y=2t+1,\ x=1+t$$
+
+Solution:
+\begin{align*}
+    x&=1+t\\
+    x-1&=t
+\end{align*}
+Sub $t=x-1$ into $y=2t+1$
+
+\begin{align*}
+    y&=2t+1\\
+    y&=2(x-1)+1\\
+    y&=2x-1
+\end{align*}
+\end{simple}
+
+\subsection{Derivative of a parametric equation}
+\begin{equation}
+    \frac{dy}{dx}=\frac{\frac{d}{dt}y(t)}{\frac{d}{dt}x(t)}
+\end{equation}
+
+\begin{simple}{}{}
+Find the derivative of:
+$$x=\sin{(t)},\ y=\cos{(t)}$$
+Solution:
+\begin{align*}
+    \frac{dy}{dx}&=\frac{\frac{d}{dt}\sin{(t)}}{\frac{d}{dt}\cos{(t)}}\\
+    &=\frac{\cos{(t)}}{-\sin{(t)}}\\
+    &=\cot{(t)}
+\end{align*}
+\end{simple}
+
+\subsection{Second derivative of a parametric equation}
+\begin{equation}
+    \frac{d^2y}{dx^2}=\frac{\frac{d}{dx}\left(\frac{dy}{dx}\right)}{\frac{d}{dt}x(t)}
+\end{equation}
+
+\begin{simple}{}{}
+Find second derivative of:
+$$x=\sin{(t)},\ y=\cos{(t)}$$
+
+Solution:\\
+Using what we calculated in the previous simple example: $$\dfrac{dy}{dx}=\cot{(t)}$$
+
+Hint: $\frac{d}{dt}\cot{(t)}=-\csc^2{(t)}$
+\end{simple}
+
+\subsection{Area of a parametric equation}
+    \begin{equation}
+        A=\int^b_ay(t)x'(t)dt
+    \end{equation}
+    $x(a)$ must be less than $x(b)$ to use this equation
+
+\subsection{Length of parametric equation curve}
+\begin{equation}
+    \int^b_a \sqrt{(x'(t))^2+(y'(t))^2}
+\end{equation}
+
+\begin{simple}{}{}
+Let 
+$$x(t)=2\cos{(t)},\ y(t)=2\sin{(t)}$$
+Find curve length between t=4 and t=10\\
+
+Solution:\\
+$\frac{d}{dt}x(t)=-2\sin{(t)}$ $\frac{d}{dt}y(t)=2\cos{(t)}dt$
+
+\begin{align*}
+    \int^10_4\sqrt{(-2\sin{(t)})^2+(2\cos{(t)})^2}dt&=\int^10_4\sqrt{4\sin^2{(t)}+4\cos^2{(t)}}dt\\
+    &=\int^10_4\sqrt{4}dt\\
+    &=\int^10_42dt\\
+    &=2\left.|^{10}_4\right.\\
+    &=20-8\\
+    &=12
+\end{align*}
+\end{simple}

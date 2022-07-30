@@ -1,0 +1,27 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{multicol}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{float}
+\usepackage[most]{tcolorbox}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.76}
+\definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0}
+\definecolor{emerald}{rgb}{0.42, 0.75, 0.42}
+\definecolor{celadon}{rgb}{0.9, 1, 0.89}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[r]{Danjie Tang}
+\fancyhead[l]{Calc 2}
+\newtcbtheorem{simple}{Simple Example}{breakable, colback=aliceblue, colframe=airforceblue}{Example}
+\newtcbtheorem{example}{Challenging Example}{breakable, colframe=emerald, colback=celadon}{Example}
+\newtcbtheorem{theorem}{Theorem}{breakable}{Theorem}
